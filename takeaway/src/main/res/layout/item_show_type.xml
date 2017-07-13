@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.library.base.liuxi.takeaway.bean.ItemPriceData"/>
+    </data>
+
+    <com.liuxi.baselibrary.view.BaseTextView
+        android:id="@+id/item_content"
+        style="@style/TextStyle.Common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/steel_blue_bg"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="@{item.itemName+`: `+item.itemPrice+`RMB`}"
+        android:textColor="@color/colorSnow"/>
+</layout>

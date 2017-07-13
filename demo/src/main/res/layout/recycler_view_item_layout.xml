@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.liuxi.library.demo.entity.ListInfo"/>
+
+        <import
+            type="com.liuxi.baselibrary.utils.FormatUtil"/>
+
+        <variable
+            name="presenter"
+            type="com.liuxi.library.demo.Activity.RecyclerViewBindingActivity.Presenter" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->presenter.onItemClick(item)}"
+        android:background="@color/colorSteelBlue"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            style="@style/TextStyle.Common"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{`名字： `+item.name}"
+            android:textColor="@color/colorSnow"
+            />
+
+        <TextView
+            android:id="@+id/content"
+            style="@style/TextStyle.Common"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@{item.introduction}"
+            android:visibility="@{FormatUtil.isEmpty(item.name)?8:0}"
+            android:textColor="@color/colorSnow"
+            />
+    </LinearLayout>
+</layout>

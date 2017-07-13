@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="main"
+            type="com.liuxi.library.demo.Activity.MainActivity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <include layout="@layout/toolbar_lay"/>
+
+        <TextView
+            android:id="@+id/data_binding"
+            style="@style/TextStyle.Large.Super"
+            android:layout_width="match_parent"
+            android:layout_margin="10dip"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="@{main.onClick}"
+            android:padding="10dip"
+            android:text="DataBindingActivity"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/recyclerView"
+            style="@style/TextStyle.Large.Super"
+            android:layout_width="match_parent"
+            android:layout_margin="10dip"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="@{main.onClick}"
+            android:padding="10dip"
+            android:text="RecyclerViewBinding"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+</layout>

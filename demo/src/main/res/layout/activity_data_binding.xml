@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.liuxi.library.demo.entity.User"
+            />
+
+        <variable
+            name="main"
+            type="com.liuxi.library.demo.Activity.DataBindingActivity"
+            />
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.liuxi.library.demo.Activity.DataBindingActivity">
+
+        <include layout="@layout/toolbar_lay"/>
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TextStyle.Common"
+            android:text="@{`我的名字叫： `+user.name}"
+            />
+
+        <TextView
+            android:id="@+id/id"
+            style="@style/TextStyle.Common"
+            android:text="@{`我的用户ID： `+String.valueOf(user.id)}"
+            />
+
+    </LinearLayout>
+</layout>

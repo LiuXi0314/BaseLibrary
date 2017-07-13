@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--默认沉浸式状态栏-->
+    <style name="AppTheme" parent="BaseTheme">
+    </style>
+
+
+    <!--Base TextViewStyle-->
+    <style name="TextStyle">
+        <item name="android:textColor">@color/colorTextBlack</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--普通字号-->
+    <style name="TextStyle.Common" parent="TextStyle">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--小字号-->
+    <style name="TextStyle.Small" parent="TextStyle">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!--超小字号-->
+    <style name="TextStyle.Small.Super" parent="TextStyle">
+        <item name="android:textSize">8sp</item>
+    </style>
+    <!--大字号-->
+    <style name="TextStyle.Large" parent="TextStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--超大字号-->
+    <style name="TextStyle.Large.Super" parent="TextStyle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <!--EditTextStyle-->
+    <style name="EditTextStyle" parent="TextStyle">
+        <item name="android:textColorHint">@color/colorTextHint</item>
+    </style>
+
+    <!--普通字号-->
+    <style name="EditTextStyle.Common" parent="EditTextStyle">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--小字号-->
+    <style name="EditTextStyle.Small" parent="EditTextStyle">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!--超小字号-->
+    <style name="EditTextStyle.Small.Super" parent="EditTextStyle">
+        <item name="android:textSize">8sp</item>
+    </style>
+    <!--大字号-->
+    <style name="EditTextStyle.Large" parent="EditTextStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--超大字号-->
+    <style name="EditTextStyle.Large.Super" parent="EditTextStyle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+    </style>
+
+</resources>
