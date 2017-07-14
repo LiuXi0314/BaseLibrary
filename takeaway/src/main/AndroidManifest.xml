@@ -5,7 +5,7 @@
     <application
         android:name="com.liuxi.baselibrary.base.BaseApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/fan_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity

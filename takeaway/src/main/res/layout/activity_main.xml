@@ -8,6 +8,8 @@
         <variable
             name="main"
             type="com.library.base.liuxi.takeaway.MainActivity"/>
+
+        <import type="com.library.base.liuxi.takeaway.view.AddPersonView"/>
     </data>
 
     <LinearLayout
@@ -25,117 +27,95 @@
             android:id="@+id/toolbar"
             style="@style/ToolbarStyle"
             android:background="@color/colorPrimaryDark"
-            app:titleTextColor="@color/colorAccent"
+            app:titleTextColor="@color/colorSnow"
             />
 
-        <android.support.design.widget.CoordinatorLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorSnow"
-            >
+            android:scrollbars="none">
 
-            <android.support.design.widget.AppBarLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/colorSnow"
-                >
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    style="@style/EditTextStyle.TextInputLayout"
+                    android:hint="支付价格*"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/pay_price"
+                        style="@style/EditTextStyle.Common.takeaway"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    style="@style/EditTextStyle.TextInputLayout"
+                    android:hint="优惠价格*"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/coupon_price"
+                        style="@style/EditTextStyle.Common.takeaway"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    style="@style/EditTextStyle.TextInputLayout"
+                    android:hint="配送费*"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/shipping_price"
+                        style="@style/EditTextStyle.Common.takeaway"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <com.library.base.liuxi.takeaway.view.AddPersonView
+                    android:id="@+id/addPersonView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_scrollFlags="scroll|enterAlways">
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal">
 
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/EditTextStyle.TextInputLayout"
-                        android:hint="支付价格*"
-                        >
+                    <ImageView
+                        android:id="@+id/to_add_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_add_box_black_36dp"/>
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/pay_price"
-                            style="@style/EditTextStyle.Common.takeaway"
-                            android:imeOptions="actionNext"
-                            android:inputType="numberDecimal"/>
-                    </android.support.design.widget.TextInputLayout>
+                    <ImageView
+                        android:id="@+id/to_calculate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_arrow_forward_black_36dp"/>
 
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/EditTextStyle.TextInputLayout"
-                        android:hint="优惠价格*"
-                        >
-
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/coupon_price"
-                            style="@style/EditTextStyle.Common.takeaway"
-                            android:imeOptions="actionNext"
-                            android:inputType="numberDecimal"/>
-                    </android.support.design.widget.TextInputLayout>
-
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/EditTextStyle.TextInputLayout"
-                        android:hint="配送费*"
-                        >
-
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/shipping_price"
-                            style="@style/EditTextStyle.Common.takeaway"
-                            android:imeOptions="actionNext"
-                            android:inputType="numberDecimal"/>
-                    </android.support.design.widget.TextInputLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.liuxi.baselibrary.view.BaseTextView
-                            android:id="@+id/confirm_btn"
-                            style="@style/EditTextStyle.Common.takeaway"
-                            android:layout_width="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="right"
-                            android:layout_marginTop="16dp"
-                            android:background="@drawable/steel_blue_btn"
-                            android:clickable="true"
-                            android:gravity="center"
-                            android:onClick="onClick"
-                            android:paddingBottom="10dp"
-                            android:paddingLeft="45dp"
-                            android:paddingRight="45dp"
-                            android:paddingTop="10dp"
-                            android:text="确认"
-                            android:textColor="@color/colorAccent"/>
-
-                        <android.support.design.widget.TextInputLayout
-                            style="@style/EditTextStyle.TextInputLayout"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="16dp"
-                            android:layout_toLeftOf="@id/confirm_btn"
-                            android:layout_weight="1"
-                            android:hint="请输入订餐人数*"
-                            >
-
-                            <android.support.design.widget.TextInputEditText
-                                android:id="@+id/person_num"
-                                style="@style/EditTextStyle.Common.takeaway"
-                                android:imeOptions="actionNext"
-                                android:inputType="number"/>
-                        </android.support.design.widget.TextInputLayout>
-                    </RelativeLayout>
                 </LinearLayout>
-            </android.support.design.widget.AppBarLayout>
 
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimaryDark"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-        </android.support.design.widget.CoordinatorLayout>
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </layout>

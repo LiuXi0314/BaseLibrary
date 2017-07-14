@@ -23,7 +23,7 @@ import org.greenrobot.eventbus.ThreadMode;
  * Activity基类
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,4 +73,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }
