@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BaseLibrary.iml" filepath="$PROJECT_DIR$/BaseLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/takeaway/takeaway.iml" filepath="$PROJECT_DIR$/takeaway/takeaway.iml" />
     </modules>
   </component>
 </project>

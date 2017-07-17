@@ -1,1 +1,1 @@
-include ':demo', ':baselibrary', ':takeaway'
+include ':baselibrary'

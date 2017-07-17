@@ -4,11 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -113,5 +113,28 @@ public class FormatUtil {
             jsonArray.put(jo);
         }
         return jsonArray;
+    }
+
+    public static String list2String(List<String> stringList) {
+        if (stringList == null || stringList.isEmpty()) return "";
+        StringBuilder builder = new StringBuilder();
+        int i = 0;
+        for (String str : stringList) {
+            if (i != 0)
+                builder.append(",");
+            builder.append(encode(str));
+            i++;
+        }
+        return builder.toString();
+    }
+
+    public static List<String> string2List(String string) {
+        if (isEmpty(string)) return null;
+        List<String> stringList = new ArrayList<>();
+        String[] strArray = string.split(",");
+        for (String str : strArray) {
+            stringList.add(decode(str));
+        }
+        return stringList;
     }
 }
