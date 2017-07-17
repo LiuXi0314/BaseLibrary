@@ -19,6 +19,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+
     }
 
 }
