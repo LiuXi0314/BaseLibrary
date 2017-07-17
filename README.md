@@ -1,2 +1,4 @@
 # BaseLibrary
-Base Library for android application
+Base Library for android application.
+
+Constantly improving...
