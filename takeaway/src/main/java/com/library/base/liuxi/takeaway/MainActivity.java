@@ -84,6 +84,10 @@ public class MainActivity extends BaseActivity implements Toolbar.OnMenuItemClic
             mDataBinding.toAddPerson.setVisibility(View.VISIBLE);
             mDataBinding.toCalculate.setVisibility(View.VISIBLE);
             mAdapter.clear();
+            if (mTmpList!= null && mTmpList!= null){
+                mTmpList.clear();
+                mTmpList.addAll(mNameList);
+            }
         } else if (id == R.id.to_add) {
             add();
         }
